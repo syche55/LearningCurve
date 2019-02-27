@@ -1,0 +1,29 @@
+print(123)
+print('yes')
+
+Python is case sensitive, dot is not legit in naming
+
+** power  % reminder
+
+type():a function we ask python what type it is
+>>>type('hello')
+<class 'str'>
+
+floating number: numbers with decimal parts
+>>>print(float(99) + 100)
+199.0
+float + int = float
+float()  int()
+
+int division produces float
+
+User input:
+input()
+the input()function returns a str
+>>>nam = input('Who are you?')
+>>>print('Welcome', nam)
+Who are you? ct
+Welcome ct
+'Welcome',: the comma put a space between Welcome and nam automatically
+
+#comment
