@@ -1,0 +1,61 @@
+Function: store and reuse
+
+def functionname():
+    clause1
+    clause2
+    
+functionname()  <-invoking the function
+print('haha')
+functioname()
+
+output:
+clause1
+clause2
+haha
+clause1
+clause2
+
+
+>>>big = max('Hello world')
+>>>tiny = min('Hello world')
+>>>print(big)
+>>>print(tiny)
+w  <-max()finds the largest character in the input, lower case is larger than upper case
+  (space)
+  
+
+def greet(lang):
+    if lang == 'es':
+        print('Hola')
+    else:
+        print('Hello')
+ 
+the parameter 'lang' is just a place holder
+>>>greet('es')
+Hola
+
+the value returned by a function can be used a parameter for another function:
+def greet():
+    return "Hello"
+
+>>>print(greet(), "Ruogu")
+Hello Ruogu
+
+'return' finishes the excution, it will not run the next line
+
+def greet(lang):
+    if lang == 'es':
+        return "Hola"
+    else:
+        print "Hello"
+>>>print(greet('es'), 'Ruogu')
+Hola Ruogu
+
+
+def addtwo(a, b)
+    added = a + b
+    return added
+x = addtwo(3, 5)
+print(x)
+output: 8
+3, 5 matches a,b
