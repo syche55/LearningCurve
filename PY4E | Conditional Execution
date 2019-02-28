@@ -1,0 +1,21 @@
+indent is essential in python
+use four space instead of tab
+
+if, elif, else,:
+when if excutes, it will not go into elif
+check in order
+
+you surround a dangerous section of code with 'try' and 'except'
+if the code in 'try' works, it skips the 'except' part
+if fails, it jumps to the 'except' section
+
+rawstr = input('Enter a number:')
+try:
+    ival = int(rawstr)
+except:
+    ival = -1
+    
+if ival > 0:
+    print('Nice work!')
+else:
+    print('Not a number.')
