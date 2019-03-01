@@ -1,0 +1,93 @@
+Opening a File: open()
+handle = open(filename, mode)
+returns a handle use to manipulate the file
+filename is a string
+mode is optional and should be 'r' if we are planning to read the file and 'w' if we are going to write to the file
+fhand = open('mbox.txt', 'r')
+
+Newline Character: \n
+Newline is still one character
+>>> stuff = 'Hello\nWorld!'
+>>> print(stuff)
+Hello
+World!
+Note: the print will add another \n at the end of the line, but that one would not be counted into the length
+
+File Handle as a Sequence
+xfile = open('mbox.txt')
+for cheese in xfile:
+    print(cheese)   <-- you are getting the file line by line
+    
+Counting Lines in a File
+- open a file read-only
+- use a for loop to read each line
+- count the lines and print out the number of lines
+fhand = open('mbox.txt')
+count = 0
+for line in fhand:
+    count = count + 1
+print('Line Count:', count)
+
+$ python open.py
+Line Count: 132045
+
+
+Reading the *Whole* File
+We can read the whole file (new lines and all) into a single string
+>>> fhand = open('mbox-short.txt')
+>>> inp = fhand.read()   <--read method
+>>> print(len(inp))
+94626
+>>> print(inp[:20])
+From stephen.marquar
+
+Searching Through a File
+fhand = open('mbox-short.txt')
+for line in fhand:
+    if line.startswith('From:'):
+        print(line)
+Note: the output would have newlines between each line
+as each line from the file has a newline at the end, 
+then the print statement adds a newline to each line
+fhand = open('mbox-short.txt')
+for line in fhand:
+    line = line.rstrip()   <---really important to get rid of newlines
+    if line.startswith('From:'):
+        print(line)
+        
+Skipping with continue:
+fhand = open('mbox-short.txt')
+for line in fhand:
+    line = line.rstrip()
+    if not line.startswith('From:'):
+        continue
+    print(line)
+    
+Using in to select lines
+fhand = open('mbox-short.txt')
+for line in fhand:
+    line = line.rstrip()
+    if not '@uct.ac.za' in line:
+        continue
+    print(line)
+    
+fname = input('Enter the file name:  ')
+fhand = open(fname)
+
+Bad File Names:
+fname = input('Enter the file name:  ')
+try:
+    fhand = open(fname)  <--dangerous code block
+except:
+    print('File cannot be opened:', fname)
+    quit()  <-- if we dont put quit() here, the reminding code will still run, and it will blow up (fhand not defined properly)
+ count = 0
+ for line in fhand:
+    if line.startswith('Subject:') :
+      count = count + 1
+ print('There were', count, 'subject lines in', fname)
+ Output:
+ Enter the file name: mbox.txt
+ There were 1797 subject lines in mbox.txt
+ Enter the file name: nana boo boo
+ File cannot be opened: nana boo boo
