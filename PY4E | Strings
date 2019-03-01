@@ -41,3 +41,53 @@ False
 >>> if 'a' in fruit:
         print('Found it!')
 Found it!
+
+String Comparison:
+you can compare strings, to see which word comes in first (depends on your computer setting)
+
+String Library:
+inbuilt functions, do not modify the original string, they return a new string that has been altered
+>>> print('Hi There'.lower())  <-- object oriented, len(x) is not oo
+hi there
+
+>>>dir(string)
+shows all methods string is capable of: string.xxx() 
+
+Searching a string: find()
+find() finds the first occurence of the substring, if not found, return -1
+>>> fruit = 'banana'
+>>> pos = fruit.find('na')
+>>> print(pos)
+2
+
+UPPER CASE lower case: string.upper()  string.lower()
+Often when we are searching for a string using find() we first convert the string to lower case 
+so we can search for a string regardless of case
+
+Search and Replace: string.replace(search string, replacement string)
+it replaces all occurrences of the search string with the replacement string
+
+Stripping Whitespace: tab, newline, also removed
+lstrip(): remove whitespace at the left
+rstrip(): remove whitespace at the right
+strip(): remove both beginning and ending whitespace
+
+Prefixes: string.startswith('x')
+>>> line = 'Please have a nice day'
+>>> line.startswith('Please')
+True
+>>> line.startswith('p')
+False
+
+Parsing and Extracting
+From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+>>> data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+>>> atpos = data.find('@')  <-- find the '@' sign
+>>> print(atops)
+21
+>>> sppos = data.find(' ',atpos)  <-- find the next whitespace from the '@' sign
+>>> print(sppos)
+31
+>>> host = data[atpos+1 : sppos]  <-- slicing,[starting from the first cha after the @ sign, stopping at but not including the white space)
+>>> print(host)
+uct.ac.za
