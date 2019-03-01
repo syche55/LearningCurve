@@ -1,0 +1,36 @@
+a break makes the program skip any other lines left in the loop
+a continue means goes back to the loop and start again
+
+while True:
+    line = input('> ')
+    if line[0] == '#':
+        continue
+    if line == 'done':
+        break
+    print(line)
+print('Done')
+
+>hello    
+hello    <--print(line) the loop has not finished yet
+>#dont print this    <--if line[0] == '#', continue, so the loop starts over again
+>print this
+print this    <--print(line)
+>done    <--break, and skip print(line), exit the loop and goes to the final clause
+Done
+
+
+
+>>>for i in [5, 4, 3]
+>>>    print(i)
+
+>>>friends = ['AA', 'BB', 'CC']
+>>>for friend in friends:
+>>>    print('Happy', friend)
+output:
+Happy AA
+Happy BB
+Happy CC
+
+iterate friend in friends
+
+
