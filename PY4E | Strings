@@ -1,0 +1,43 @@
+"+" concatenate strings
+
+we prefer to read data in using strings and then parse and convert the data as we need
+raw input numbers must be converted from strings
+
+b a n a n a
+0 1 2 3 4 5
+fruit = 'banana'
+len(fruit) 
+
+print(index, letter)
+
+fruit = 'banana'
+for letter in fruit
+    print(letter)
+    
+
+slicing:
+>>> s = 'Monty Python'
+>>> print (s[6:7])
+p
+
+[start, end)
+if end goes beyond the str, it stops at the end of the str
+if we leave off the first number or the last number of the slice, 
+it is assumed to be the beginning or end of the string respectively
+>>> print(s[8:])
+thon
+>>> print(s[:2])
+Mo
+>>> print(s[:]
+Monty Python
+
+The in keyword can also be used to check to see if one string is 'in' another string
+the in expression is a logical expression that returns True or False and can be used in an if statement
+>>> fruit = 'banana'
+>>> 'n' in fruit
+True
+>>> 'm' in fruit
+False
+>>> if 'a' in fruit:
+        print('Found it!')
+Found it!
