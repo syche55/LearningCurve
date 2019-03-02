@@ -1,0 +1,36 @@
+a list element can be any python object, even another list, like a mixing list of str, int, float, list etc
+
+strings are immutable: we cannot change the contents of a string, we must make a new string to make any change
+lists are mutable: we can change an element of a list using the index operator
+lotto = [2, 14, 26, 41, 63]
+lotto[2] = 28
+
+Range function:
+>>> print(range(4))
+[0, 1, 2, 3]
+we can use the len() to help construct a loop:
+for i in range(len(friends)):
+    friend = friend[i]
+    print(Happy New Year:', friend)
+Instead of looping through that list itself, we do range len friends, then we can know the position of each element
+
+Concatenating lists using '+'
+>>> a = [1, 2, 3]
+>>> b = [4, 5, 6]
+>>> print (a + b)
+1 2 3 4 5 6
+
+Lists can be sliced using [:] [3:] [:2]
+
+List methods
+append, count, extend, index, insert, pop, remove, reverse, sort
+
+stuff = list()
+stuff.append(99)
+
+using 'in' 'not in', we can check if an item is in a list, return True or False
+
+.sort() can change the list's order
+
+functions that take lists as their arguement:
+len(list), max(list), min(list), sum(list)
