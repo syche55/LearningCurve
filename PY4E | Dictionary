@@ -1,0 +1,40 @@
+purse = dict()
+(or: purse = {}
+purse['money'] = 12
+purse['money'] = purse['money'] + 2
+
+You can use dictionary to count frequency
+
+If a key is not in the dict, there will be an error, so we use 'in' to check first
+>>> 'csev' in ccc
+False
+
+counts = dict()
+names = ['csev', 'cwen', 'csev', 'zqian', 'cwen']
+for name in names:
+    if name not in counts:
+        counts[name] = 1  <-- this adds a new key-value pair to the dictionary
+    else:
+        counts[name] = counts[name] + 1
+print(counts)
+Output:
+{'csev':2, 'zqian':1, 'cwen':2}
+
+The get method for dictionaries:
+The pattern of checking to see if a key is already in a dictionary 
+and assuming a default value if the key is not there is so common 
+that there is a method called get() that does this for us
+
+if name in counts:
+    x = counts[name]
+else:
+    x = 0   <--- default, meaning what is not there
+FOUR LINES ABOVE CAN BE ONE LINE BELOW:
+x = counts.get(name, 0)  <-- name is the key, 0 is the default, 
+if key exits, you get value, if key doest exist, you get default
+
+counts = dict()
+names = ['csev', 'cwen', 'csev', 'zqian', 'cwen']
+for name in names:
+    counts[name] = counts.get(name, 0) + 1
+print(counts)
