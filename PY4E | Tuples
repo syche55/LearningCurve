@@ -1,0 +1,91 @@
+list is mutable:
+>>> x = [9, 8, 7]
+>>> x[2] = 6
+>>> print(x)
+[9, 8, 6]
+
+tuples are immutable:
+>>> y = 'ABC'
+>>> y[2] = 'D'
+Traceback: str object does not support item assignment
+>>> z = [5, 4, 3]
+>>> z[2] = 0
+Traceback: tuple object does not support item assignment
+
+tuples no .append() .extend() .insert() .pop() .remove() .reverse() .sort() (While lists can)
+tuples can: .count() .index()
+tuples are more efficient
+
+tuples and assignment:
+>>> x, y = 4, 'Fred
+>>> print(y)
+fred
+
+tuples and dictionary: The items() function in dictionaries returns a list of (key, value) tuples
+>>> d = dict()
+>>> d['csev'] = 2
+>>> d['cwen'] = 4
+>>> for (k, v) in d.items():
+>>>     print(k, v)
+csev 2
+cwen 4
+>>> tpus = d.items()
+>>> print(tpus)
+dict_item(['csev', 2], ['cwen', 4])
+
+tuples are comparable
+if the first item is equal, Python goes to the next element, and so on, until it finds a element that differs.
+>>> (0, 1, 2) < (3, 4, 5)
+True
+>>> ('Jones', 'Sally') > ('Adams', 'Sam')
+True
+
+Sorting Lists of Tuples
+>>> d = {'a':10, 'b':1, 'c':22}
+>>> d.item()
+dict_items([('a', 10), ('c', 22), ('b', 1)])
+>>> sorted(d.items())
+[('a', 10), ('b', 1), ('c', 22)]
+
+>>> d = {'a':10, 'b':1, 'c':22}
+>>> t = sorted(d.items())
+>>> t
+[('a', 10, ('b', 1), ('c',22)]   <---we can omit the parentheses
+>>> for k, v in sorted(d.items()):
+        print(k, v)
+a 10
+b 1
+c 22
+
+Sort by values instead of key: tuple data structure
+if we could construct a list of tuples of the form (value, key) we could sort by value
+>>> c = {'a':10, 'b':1, 'c':22}
+>>> tmp = list()
+>>> for k, v in c.items():
+      tmp.append( (v, k) )
+>>> print(tmp)
+[(10, 'a'), (22, 'c'), (1, 'b')]
+>>> tmp = sorted(tmp, reverse = True)   <-- decending sort
+>>> print(tmp)
+[(22, 'c'), (10, 'a'), (1, 'b')]
+
+
+The top 10 most common words
+fhand = open('romeo.txt')
+counts = dict()
+for line in fhand:    <---go through each line
+    words = line.split()    <---split each word
+    for word in words:  <---go through each word
+      counts[word] = counts.get(word, 0) + 1  <---build a histogram, word is key, 0 is default, 
+lst = list()
+for key, val in counts.items():
+    newtup = (val, key)   <---create a new tuple, flipping key and val
+    lst.append(newtup)    <---append the tuple to the new list
+lst = sorted(lst, reverse = True)   <---sort the new list
+for val, key in lst[:10] :
+    print(key, val)
+    
+Even Shorter Version: List Comprehension
+>>> c = {'a':10, 'b':1, 'c':22}
+>>> print( sorted( [v,k] for k,v in c.items()] ) )
+[(1, 'b'), (10 'a'), (22, 'c')]
