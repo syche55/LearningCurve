@@ -1,0 +1,67 @@
+not regex:
+hand = open('mbox-short.txt')
+for line in hand:
+    line = line.rstrip()
+    if line.find('From:') >= 0:
+        print(line)
+        
+using regex:
+import re    <---first line for regex
+hand = open('mbox-short.txt')
+for line in hand:
+    line = line.rstrip()
+    if re.search('From:', line) :
+    print(line)
+    
+^X.*:
+^:start with, <if re.search('^From:', line) :> <--start with 'From:', match the start of the line
+.:match any character
+*:many times
+look for a line that starts with x and then hans many characters 
+that's with these two things(. *) zero or more characters followed by a colon
+e.g.:
+X-Sieve: CMU Sieve 2.3
+X-DSPAM-Result: Innocent
+X-Content-Type-Message-Body: text/plain
+
+^X-\S+:
+^:Match the start of the line (X-)
+\:Match any non-whitespace character
++:one or more times
+e.g.:
+X-Sieve: CMU Sieve 2.3
+X-Sieve: CMU Sieve 2.3
+X-Plane is behind schedule: two weeks <---not valid
+
+Matching and Extracting Data
+re.search() returns True/False
+re.findall() extract the matching strings
+>>> import re
+>>> x = 'My 2 favorite numbers are 19 and 42'
+>>> y = re.findall('[0-9]+',x)   <---[0, 9]+ means one or more digits
+>>> print(y)
+['2', '19', '42']
+>>> y = re.findall('[AEIOU]+', x) <--uppercase AEIOU
+>>> print(y)
+[]
+
+Warning: Greedy Matching
+the repeat characters (* and +) push outward in both directions(greedy) to match the largest possible string
+>>> import re
+>>> x = 'From: Uisng the : character'
+>>> y =re.findall('^F.+:', x)
+>>> print(y)
+['From: Using the :'] <---not 'From:'
+If we use '^F.+?:'it will be non-greedy, it prefers a shorter string ['From:']
+
+From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+>>> y = re.findall('\S+@\S+', x)  <---\S+SOMETHING\S+ means a string that has a SOMETHING with non-whitespace character on both sides
+>>> print(y)
+['stephen.marquard@uct.ac.za']
+this is greedy, otherwise it would return d@u
+
+Parentheses tell where to start and stop what string to extract:
+From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+>>> y = re.findall('^From (\S+@\S+)', x)   <---starts from \S+ which is the non-whitespace character omitting the 'From 'part
+>>> print(y)
+['stephen.marquard@uct.ac.za']
