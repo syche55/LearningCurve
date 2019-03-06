@@ -1,0 +1,32 @@
+TCP Connections / Sockets
+In computer networking, an Internet socket or network socket is an endpoint of a bidirectional iner-process communication 
+flow across and Internet Protocol-based computer network, such as the Internet.
+
+ Process <-- Internet --> Process
+(Broswer)               (Web server)
+
+Port is like an extension number
+Common TCP Ports:
+Telnet(23) - Login
+SSH(22) - Secure Login
+HTTP(80)
+HTTPS(443) - Secure
+SMTP(25) - Mail
+IMAP(143/220/993) - Mail Retrieval
+POP(109/110) - Mail Retrieval
+DNS(53) - Domain Name
+FTP(21) - File Transfer
+
+Sockets in Python
+Python has built-in support for TCP Sockets
+import socket
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect( ('data.pr4e.org', 80) )  <--'data.pre4.org' is Host, 80 is Port
+
+
+HTTP - Hypertext Transfer Protocol
+The dominant Application Layer Protocol on the Internet
+Invented for the Web - to Retrieve HTML, Images, Documents, etc
+Extended to be data in addition to documents - RSS, Web Services, etc.. 
+Basic Concept - Make a Connection - Request a document - Retrieve the Document - Close the Connection
+
