@@ -1,0 +1,16 @@
+Class
+Method or Message: method: function scoped in the class
+Field or attribute
+Object or Instance
+
+class PartyAnimal  
+  x = 0    <-- each partyAnimal object has a bit of data, this is a method
+  
+  def party(self)
+  self.x = self.x + 1     <-- each PartyAnimal object has a bit of code
+  print("So far", self.x)  
+  
+an = PartyAnimal()   <-- construct a partyAnimal object and store in an
+
+an.party()   <--- PartyAnimal.party(an), tell the an object to run the party() code within it
+an.party()  
