@@ -1,0 +1,35 @@
+- reduce the search space by half at each step
+- input usually needs to be sorted
+Fast: O(log(range))*O(eval) vs O(range)*O(eval) linear scan
+brute force: O(N) 
+
+Template:
+[1, r)
+def binary search(l,r):
+  while l < r:
+     m = l + (r - 1) // 2
+     if f(m): return m   #optional
+     if g(m):
+        r = m   #new range [l, m)
+     else:
+        l = m + 1   #new range [m+1, r)
+  return l   #or not found
+  #find the smallest l that makes g(m) true
+  
+#Time complexity: O(log(r-l)*(f(m)+g(m)))
+#Space complexity: O(1)
+
+E.g.1: return the index of an element in a sorted array. Elements are unique. if not found return -1
+A = [1, 2, 5, 7, 8, 12]
+search(8) = 4, search(6) = -1
+Solution:
+def binary_search(A, val, l, r):
+  while l < r:
+    m = l + (r-1) //2
+    if A[m] == val: return m
+    if A[m] > val:
+      r = m
+    else:
+      l = m + 1
+    return -1   #not found
+binary_search(A, 8, 0, len(A))
