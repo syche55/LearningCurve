@@ -1,0 +1,22 @@
+"""
+Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+"""
+#XOR
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        ans = 0
+        for num in nums:
+            ans ^= num
+        return ans
+        
+        
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        dict = {}
+        for i in nums:
+            if i not in dict:
+                dict[i] = 1
+            else:
+                del dict[i]
+        for key in dict:
+            return key
