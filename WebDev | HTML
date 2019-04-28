@@ -1,0 +1,84 @@
+HTML: HyperText Markup Language
+- Anatomy of an HTML Tag:
+<h1></h1> tag omission is None
+<br> <hr> self-closing tag: must not have an end tag
+
+- HTML Attribute
+<hr size="3" noshade>
+hr: HTML element
+size="3": HTML Attribute
+align / color / noshade / size/ width
+
+<center>
+</center>
+
+- comment:
+<!-- ...... -->
+
+- <title>Name shown on tag</title> 
+
+- HTML <meta> Tag 
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">  : tells the search engine what to show
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="John Doe">
+</head>
+
+- italicize and bold
+always use <em></em> <strong></strong>
+
+- list
+<ul></ul> unordered list
+<ol></ol> ordered list
+<li></li> each bullet points in a list
+<ul>
+  <li>xxx</li>
+  <li>ooo</li>
+</ul>
+
+- image :self-closing tag
+<img src="..." alt="image content">
+
+- Anchor tag, not self closing
+<a href="https://...">Hello</a>
+a: html element
+href: attribute
+Hello: link text, highlighted text
+can link other pages or external source
+for download: <a download href="https://...">Download</a>
+
+https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf
+
+
+- Table
+<table>
+  <thead>     <!--can be omitted-->
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td> #table data
+    </tr>
+  </tbody>
+</table>
+
+- Form: form,lable,input(self-closing)
+<form class="" action="mailto:syche55@gmail.com" method="post" enctype="text/plain">
+      <label>Your Name:</label>
+      <input type="text" name="yourName" value=""><br>
+      <label>Your Message:</label><br>
+      <textarea name="yourMessage" rows="10" cols="50"></textarea><br>
+      <input type="submit" name="">
+</form>
+    <form class="" action="index.html" method="post">
+      <input type="text" name="" value="">
+      <input type="password" name="" value=""> encrypted
+      <input type="submit" name="" value="">
+      <input type="file" name="" value="">
+      <input type="date" name="" value="">
+      <input type="radio" name="" value="">
+      <input type="range" name="" value="">
+</form>
