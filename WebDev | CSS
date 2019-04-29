@@ -46,3 +46,6 @@ CSS = Cascading Style Sheets
   .circular{}
   
   :hover
+  img:hover{
+    background-color: gold;
+    }
