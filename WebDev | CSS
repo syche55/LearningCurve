@@ -1,0 +1,48 @@
+CSS = Cascading Style Sheets
+
+- Inline CSS
+  <body style="background-color: blue;">
+  
+- Internal CSS
+  <style> 
+    body{
+      background-color: blue;
+    } 
+  <styles>
+  
+  browser default CSS
+  https://www.w3schools.com/cssref/css_default_values.asp
+  hr: border-style: inset; inset means it makes the line look embedded, none means no height, give it a height
+  https://devdocs.io/css/height
+  body: display: block;
+  
+  hr width: px / percentage (change according to browser)
+  border-style: dotted, none, none;
+  when specify three values, dotted->top, none->left&right, bottom->bottom
+  equals:
+  border-style:none;
+  border-top-style:dotted; (more specific)
+  when box has no height, hr background color is useless, use border color instead
+  
+- External CSS
+  <head>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  syntax:
+  selector{property:value;}
+  
+- Classes vs IDs
+  <img class="bacon" src=.....>
+  .bacon{
+  }
+  <h1 id="heading">
+  #heading{
+  }
+  classes and IDs are more specific, will override general img, h1 tags
+  ID should be unique, classes are not
+  you can have several classes, id not
+  <img class="bacon circular" src=.....>
+  .bacon{}
+  .circular{}
+  
+  :hover
