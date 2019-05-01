@@ -77,7 +77,42 @@
   often used in navigation bar
   
   
-  - Center
+- Center
   body{
-    text-align: centerl;
+    text-align: center;
   }
+  if we set the element say like 10% width of the screen, the center will not work
+  we can use margin to make it center back 
+  margin: auto;
+  margin: 0, auto;
+  margin: 0, auto, 0;
+  margin: 0, auto, 0, auto;
+  
+- Font
+  font-family: verdana, sans-serif;    first try verdana, if not installed, sans-serif
+  fonts.google.com
+  copy the link to index head
+  
+- Font size
+  static: px
+  dynamic: %, em, rem
+  16px = 100% = 1em
+  font size from body will add to the h1 size, to avoid, use rem(root), it ignores the parent setting
+  font-weight: bold / normal
+  
+- Line height:
+    1 is default, 2 is double, no units
+    
+- Float & clear
+  float: left;
+  clear: right;    clear makes the item not float around
+  
+  dotted hr:
+  border: dotted red 6px;
+  border bottom: none;
+  width: 4%;
+  margin: 100px auto;
+
+  change link underlying: text-decoration: none;
+  
+  a:hover
