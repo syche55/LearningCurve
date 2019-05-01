@@ -1,0 +1,83 @@
+- Div
+  <div class=""></div>
+  you can specify the height, or have content in it.
+  
+- User Agent Stylesheet
+
+- The box model of website styling
+  margin - border - padding - content
+  
+  width: 100%;  100% of the screen
+  border: solid;
+  border-width: 0, 20px, 30px, 0; (clock wise)
+  padding goes within border and content
+  margin is outside border
+  margin, border, padding all impact the total size of the box
+  
+- Display
+  Block / Inline / Inline-block / None
+  
+  Common block elements:
+  <p>
+  headers
+  <div>
+  lists and list elements
+  <form>
+  
+  block will have extra space, and will take up the entire screen.
+  you have two blocks, and they cannot sit on the same line.
+  instead, we can use <span class=""></span>
+  <p><span>xxx</span>xxxxx</p>
+  span only has a small space between each other
+  however, it cannot change width
+  
+  Common inline elements:
+  <span>
+  <img>
+  <a>
+  
+  in order to have two blocks in the same line and be able to change the width, use inline-block
+  
+  display:none;   this makes the item disappear, position no longer there
+  visibility: hidden; position still there, item disappear
+  
+  
+- Static and Relative Positioning
+  1. content is everything
+  2. order comes from code
+  3. children sit on parents
+  <div><h1><span></span></h1></div>  the span result is the final result
+  
+  Position:
+  Static / Relative / Absolute / Fixed
+  
+  Static: default
+  
+  Relative: relative to static
+  img{
+    position: relative;
+    left: 30px;
+  }
+  left means push from left
+  relative position doesnt affect the position of other things on the screen
+  
+  Absolute: relative to its parent
+  say if there is a div outside the img, 
+  div{
+    position: relative;
+  }
+  img{
+    absolute
+    right: 30px;
+  }
+  this would move the img to the right, with 30px relative to the edge of the div
+  when using absolute position, the item would go out of the flow, other items shift (if it was in their way)
+  
+  Fixed: if you scroll the screen, the item would stick to its position
+  often used in navigation bar
+  
+  
+  - Center
+  body{
+    text-align: centerl;
+  }
