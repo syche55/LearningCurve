@@ -1,0 +1,3 @@
+return collections.Counter(w for w in words if w not in banned).most_common(1)[0][0]
+
+https://docs.python.org/3/library/collections.html#collections.Counter
