@@ -1,0 +1,19 @@
+Navigation:
+Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl} for responsive collapsing and color scheme classes.
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  
+Hamburger 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+##Data Target shoule be the same as id in collapse class
+
+Position matters! (icon, menu, left, right)
+
+Grid Layout
+https://getbootstrap.com/docs/4.3/layout/grid/
+
+Sublime: option key + click + drag
+
