@@ -1,0 +1,47 @@
+=== is equal to [check data type]  == [does not check data type]
+!== not equal to
+&& and
+|| or
+! not
+
+guestList.includes(guestName)
+
+array.push();
+array.pop();
+
+for(i=0; i<2; i++){
+...}
+
+<body onload = "alert("Hello")"> is wrong
+<body onload = "alert('Hello')"> is correct
+
+<script type = "text/javascript">
+  alert("Hello");
+</script>
+<script src = "index.ju" charset...></script>
+
+>document.getElementsByTagName("li")
+HTMLCollection(3) [li.item, li.item, li.item]
+>document.getElementsByTagName("li")[0].style.color = "red";
+
+document.querySelector.("h1");
+document.querySelector.("#title");
+document.querySelector.(".btn");
+document.querySelector.("li a")  <li class="item"><a href=...>Google</a></li>
+document.querySelector.("li.item")
+
+querySelector only selects the first one
+querySelectorAll selects all as a list
+
+document.querySelector("li").style...   Select "-"
+and
+document.querySelector("li a").style    Select"-xxx"
+are not the same
+
+document.querySelector("h1").classList.add('huge");
+styles.css
+.h1{
+...}
+
+-innerHTML shows everything(including html tag) in h1, e.g.<strong></strong>, can manipulate this to add <em></em>
+-textContext only shows text
