@@ -1,0 +1,35 @@
+Adding JS to Websites:
+1:
+<body onload="alert('Hello');">
+</body>
+2:
+<script type="text/javascript">
+alert("Hello!");
+</script>
+3: 
+<script src="index.js"></script>
+
+The place to put the js matters a huge deal
+CSS should be put in <head></head>
+JS should be put just before </body>
+
+Selecting Elements
+query selector:
+document.firstElementChild
+document.firstElementChild.fistElementChild
+document.lastElementChild
+
+document.getElementsByTagName("li");  <--returns an array
+document.getElementsByTagNmae("li")[2].style.color = "purple";
+document.getElementsByTagName("li").length;
+document.getElementsByClassName("btn");
+document.getElementById("title").innerHTML = "Good Bye";  <-- element, returns only one element, Id is unique
+document.querySelector("h1");
+document.querySelector("#"); <--id
+document.querySelector("."); <--class
+<a href="
+<ul id="list">
+  <li class="item"><a href="https://www.google.com">Google</a></li>
+  <li class="item">Second></li>
+</ul>
+document.querySelector("li a"); <--a href in side li
