@@ -24,12 +24,21 @@ document.getElementsByTagNmae("li")[2].style.color = "purple";
 document.getElementsByTagName("li").length;
 document.getElementsByClassName("btn");
 document.getElementById("title").innerHTML = "Good Bye";  <-- element, returns only one element, Id is unique
+
+更常用的是querySelector
 document.querySelector("h1");
 document.querySelector("#"); <--id
 document.querySelector("."); <--class
-<a href="
+<a href="https://www.google.com">Google</a>  [1]
 <ul id="list">
-  <li class="item"><a href="https://www.google.com">Google</a></li>
-  <li class="item">Second></li>
+  <li class="item"><a href="https://www.google.com">Google</a></li>  [2]
+  <li class="item">Second></li>  [3]
 </ul>
-document.querySelector("li a"); <--a href in side li
+document.querySelector("li a"); <--a href in side li, [2] 有空格的是包裹关系
+document.querySelector("a") [1]
+document.querySelector("li.item") list element that also has a class item <li class="item"> 没空格的是平行关系 
+document.querySelector("#list .item"); [2][3]都满足 但只会返回第一个[2]
+document.querySelectorAll("#list .item"); 返回[2][3]
+document.querySelectorAll("li a").style.color = "red"; 改变字体颜色
+document.querySelectorAll("li").style.color = "red";  改变bullet点的颜色
+
