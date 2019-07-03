@@ -1,10 +1,22 @@
 for (var i =0; i<numberofDrumButtons; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
-    this.innerHTML
-    var audio = new Audio('audio_file.mp3');
-    audio.play();
+    var buttonInnerHTML = this.innerHTML;
+      switch (buttonInnerHTML) {
+        case "w":
+          var audio = new Audio('sounds/tom-1.mp3');
+          audio.play();
+         break;
+        case "a":
+          var audio = new Audio('sounds/tom-2.mp3');
+          audio.play();
+         break;
+        default: console.log(buttonInnerHTML);
+        }
     });
 };
+document.addEventListener("keypress", function(event) {
+  makeSound(event.key);
+});
 
 chrome tools:
 debugger;
@@ -12,13 +24,30 @@ hold on shift and enter
 calculator(3,4,multiply);
 NOW YOU CAN STEP THROUGH YOUR CODE
 
+
+    
 Constructor Function function名字必须开头大写
 function BellBoy(name, age, hasWorkPermit, languages) {
   this.name = name;
   this.age = age;
   this.hasWorkPermit = hasWorkPermit;
   this.languages = languages;
+  this.moveSuitcase = function() {
+    alert("May I take your suitcase?");
+    pickUpSuitcase();
+    move();
+    }
 }
   
 Initialise Object
 var bellBoy1 = new BellBoy("Timmy", 19, true, ["French", "English"]);
+
+
+加动画: pressed是一个有特效的class, click之后加上, 1秒后移除, 达到动画效果
+function buttonAnimation(currentKey) {
+  var activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(function() {
+  activeButton.classList.remove("pressed");
+  }, 100);
+}
