@@ -37,3 +37,12 @@ $("h1").append("<button>New</button>");
 
 
 加动画:
+$("h1").on("click", function() {
+  $("h1").toggle();   <--还有hide, show, fadeOut, fadeIn, fadeToggle, slideUp, slideDown, slideToggle (dropdown menu)
+});
+还可以用animate({opacity: 0.5}); 必须是numeric value 不能由绿变红
+
+$("button").on("click", function() {
+  $("h1").slideUp().slideDown().animate({opacity: 0.5});
+});
+https://api.jquery.com/category/effects/
