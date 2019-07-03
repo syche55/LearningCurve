@@ -1,0 +1,24 @@
+for (var i =0; i<numberofDrumButtons; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+    this.innerHTML
+    var audio = new Audio('audio_file.mp3');
+    audio.play();
+    });
+};
+
+chrome tools:
+debugger;
+hold on shift and enter
+calculator(3,4,multiply);
+NOW YOU CAN STEP THROUGH YOUR CODE
+
+Constructor Function function名字必须开头大写
+function BellBoy(name, age, hasWorkPermit, languages) {
+  this.name = name;
+  this.age = age;
+  this.hasWorkPermit = hasWorkPermit;
+  this.languages = languages;
+}
+  
+Initialise Object
+var bellBoy1 = new BellBoy("Timmy", 19, true, ["French", "English"]);
