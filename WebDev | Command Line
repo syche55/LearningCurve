@@ -1,0 +1,3 @@
+ls / cd / cd .. / cd ~ / cd Documents/Learn
+control + A (go to start) / control + E (go to end) / control + U (clear line)
+mkdir / touch / open / open -a Atom / rm * / rm -r (remove a directory)
