@@ -1,0 +1,35 @@
+Express: node framework
+
+在terminal里:
+npm init
+npm install express
+npm install body-parser
+
+在server.js里:
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
+app.use(bodyParser.text());  <--bodyParser has a few modes, parse all the requests into text, or bodyParser.json()
+app.use(bodyParser.urlencoded({extended: true}));  <--parse data that comes from html form, 有了这个就可以在post里用req.body
+app.get("/", function(req, res){
+  res.send("Hello");
+  })
+app.get("/contact", function(req, res){          <--如果有人try to get to the contact page, we will respond with this function
+  res.send("Contact me at: syche55@gmail.com");
+  });
+  
+app.post("/", function(req, res){
+  var num1 = Number(req.body.num1); 如果只写  var num1 = req.body.num1; num会以text的形式parse
+  var num2 = Number(req.body.num2);  num1 num2是在index.html里列明的input的name <input type="text" name="num1">
+  var result = num1 + num2;
+  res.send("The result of the calculation is" + result);
+  });
+  
+app.listen(3000 function() {
+  console.log(server started on port 3000");
+  });
+  
+npm install -g nodemon
+
+除了res.send()我们还可以用res.sendFile() 填入location of the file we want to send:
+res.sendFile(__dirname + "/index.html")
