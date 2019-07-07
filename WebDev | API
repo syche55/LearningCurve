@@ -1,0 +1,3 @@
+cURL:
+terminal: man curl gives you a manual of how to use it
+curl https://www.google.com
