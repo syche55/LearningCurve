@@ -1,0 +1,42 @@
+Common Array methods used in Java
+
+0. Declare an Array:
+  int[] a = new int[5];
+  int[] b = {1, 2, 3};
+  int[] c = new int[]{1, 2, 3};
+  
+1. print an Array:
+  String s = Arrays.toString(a);
+  
+2. Create an Array to an ArrayList:
+  ArrayList<Integer> b = new ArrayList<Integer>(Arrays.aslist(a));
+  
+7. Convert an ArrayList to an Array
+  Integer[] arr = new Integer[al.size()]; 
+        arr = al.toArray(arr);
+  
+3. Contains:
+  boolean b = Arrays.asList(a).contains(3);
+  
+4. Cancatenate two Arrays:
+  // apache commons lang library
+  int[] c = ArrayUtils.addAll(a, b);
+  
+5. Declare an array inline:
+  method(new String[]{"a", "b", "c"});    // takes a new array as an argument
+  
+6. join an Array to a single string:
+  // apache commons lang library
+  String j = StringUtils.join(new String[]{"a", "b", "c"}, ",");
+  
+8. Convert an array to a set:
+  Set<String> set = new HashSet<String>(Arrays.asList(a));
+
+9. Reverse an array:
+  ArrayUtils.reverse(a);
+  
+10. Remove element of an array:
+// Array cannot add/delete, size does not change
+// apache commons lang library
+  int[] removed = ArrayUtils.removeElement(a, 3);
+  
