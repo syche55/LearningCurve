@@ -19,7 +19,7 @@ In short: program is initially on disks, main memory reads from disks. When CPU 
 If no, saves it in cache
 
 sizeof(): operator
-When sizeof() is used with the data types, it simply returns the amount of memory allocated to that data type. 
+When sizeof() is used with the data types, it simply returns the amount of memory(bytes) allocated to that data type. 
 The output can be different on different machines like a 32-bit system can show different output 
 while a 64-bit system can show different of same data types.
 
@@ -46,3 +46,44 @@ Once you have a pointer, you want the value it points to
 500 500
 *y is the dereferencing, it simply gets the content that it points to
 &x get the adresss
+
+C arrays:
+- Arrays are sequential locations in memory
+- Arrays are typed and homogenous (cant store different types)
+- Typing determines how much space is allocated for each element 
+- Arrays are fixed in size when declared – no growing or shrinking 
+- Access arrays by indexing – starting at 0
+- Strings are represented as array of char - with \0 terminating the string
+e.g.:
+  char d[10]  // this is a string that consists of 10 chars maximum
+  d[0] = 'S';
+  d[1] = 'i';
+  d[2] = '\0'; // final character is NUL (0) which terminates the string, let computer knows that this string is over
+  // rest of d not defined, which is allowed
+  >>> printf("Our string is |%s|\n",d);
+  Our string is |Si|
+Above initialisation is same as: char d[10] = {'S', 'i', '\0'};
+same as: char d[10] = “Silicon”
+#include <string.h> works as import
+
+(void*)&d[i]: void* means we dont know the type
+
+d is actually a pointer(in some way), d[0] is the current element, d[1] is pointer address + 1
+
+
+Structs
+
+typedef struct Student { 
+  int age;
+  int id;
+  char campus; 
+ } Student_type;
+ 
+ - if we dont write Student_type at the end, every time we use struct Student we have to write all of the above
+ - typedof creates a new data type called Student_type
+ - every var of Student_type has three variables, which can be accessed using "." notation
+ 
+ >>> Student_type myClass[3];
+ >>> Student_type* thisStudent;
+ >>> thisStudent = &(myClass[0]);
+ >>> thisStudent->id    // works same as (*thisStudent).id
