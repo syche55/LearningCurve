@@ -30,6 +30,19 @@ x     int   4     &x
 Pointer:
 - A pointer is a variable that stores the address of another variable. 
 - (char*)&c: address of c
-- 0x%p: print pointer format
+- 0x%p: print pointer format (some C compilers don’t add it for you. Otherwise omit)
 - (char*) (int*) tell C what kinds of format the pointers are
 - The “empty” value of a pointer is NULL – initialize pointers and check for NULL
+- normal variable int x = 500; (address: 0x1001)
+- pointer variable: int* y = &x; (y: 0x1001, points to variable x that contains 500)
+- pointer y also has its own address: 0x5142
+- To be safe, check if y is NULL before accessing it (check value, size)
+
+Dereferencing:
+Once you have a pointer, you want the value it points to
+>>> int x = 500;
+>>> int* y = &x;
+>>> printf (“%d %d\n”, x, *y); 
+500 500
+*y is the dereferencing, it simply gets the content that it points to
+&x get the adresss
