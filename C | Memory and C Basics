@@ -72,7 +72,6 @@ d is actually a pointer(in some way), d[0] is the current element, d[1] is point
 
 
 Structs
-
 typedef struct Student { 
   int age;
   int id;
@@ -87,3 +86,62 @@ typedef struct Student {
  >>> Student_type* thisStudent;
  >>> thisStudent = &(myClass[0]);
  >>> thisStudent->id    // works same as (*thisStudent).id
+ 
+ 
+ Stack & Heap
+   _______
+  |       |  Heap
+  |_______| 
+  |       |
+  |       |
+  |_______| Stack
+  
+  f(x) calls happen in Stack, creates variables in scope of the current program, when f(x) returns, it could not be used again, 
+  could be overwritten by other functions, to store the values we use heap to store, like when we new an object we store in heap
+  We need to allocate memory in heap and free it after use: malloc(), free() 
+  Stack is automatically managed
+  
+  
+Malloc
+- malloc takes the number of bytes to allocate as an argument
+- malloc returns a pointer to the memory location
+int* newInt = (int*)malloc(sizeof(int));  // creates a new int
+*newInt = 5;  // assigns values to it
+free(newInt);
+int* newArray = (int*)malloc(4*sizeof(int));  // creates a new int array
+newArray[0] = 3;  // array == pointer 实锤
+
+LinkedList example:
+typedof struct node{
+  int data;
+  struct node *next;    //because node_t has not been seen, we cant use node_t here, but they are the same
+  } node_t;
+  
+node_t *creat_t(){    // a function that returns node_t type
+  node_t* temp = malloc(sizeof(node_t));
+  return temp;
+}
+
+
+Pass by value
+void doSth (int x) {
+  x = 9;      // the function creates a copy of int x, so changes to the copy does not affect the original x
+}
+
+Pass by reference
+void doSthElse (int* x) {
+  *x = 9;   // this changes the value that stores in *x this address, which changes the original x
+}
+
+void doSthExtra (int* x) {
+  x = &i  // this changes x to point to another variable, the address that x holds changes. Now x is the key to i
+}
+
+
+
+
+
+
+
+
+
