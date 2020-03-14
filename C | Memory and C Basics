@@ -17,3 +17,19 @@ Hard disk
 persistent memory
 In short: program is initially on disks, main memory reads from disks. When CPU tries to run it, it checks if cache already has it.
 If no, saves it in cache
+
+sizeof(): operator
+When sizeof() is used with the data types, it simply returns the amount of memory allocated to that data type. 
+The output can be different on different machines like a 32-bit system can show different output 
+while a 64-bit system can show different of same data types.
+
+C variables:
+name, type, size, address
+x     int   4     &x
+
+Pointer:
+- A pointer is a variable that stores the address of another variable. 
+- (char*)&c: address of c
+- 0x%p: print pointer format
+- (char*) (int*) tell C what kinds of format the pointers are
+- The “empty” value of a pointer is NULL – initialize pointers and check for NULL
