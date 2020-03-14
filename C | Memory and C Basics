@@ -1,0 +1,19 @@
+Processor registers
+Small number (~16 words) of very fast memory locations located in CPU.
+
+Main memory
+Hardware is usually dynamic RAM (data goes away if power is turned off)
+
+Cache memory
+Faster than main memory
+Might have different levels
+Hashtable
+
+Virtual memory
+The operating system can pretend it has more memory by swapping out infrequently used blocks of memory to disk, 
+and swapping back in needed blocks of memory from disk
+
+Hard disk
+persistent memory
+In short: program is initially on disks, main memory reads from disks. When CPU tries to run it, it checks if cache already has it.
+If no, saves it in cache
