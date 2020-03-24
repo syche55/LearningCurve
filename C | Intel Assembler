@@ -1,0 +1,28 @@
+hello.c (source program)
+<Pre-processor(cpp)>
+hello.i (modified source program)
+<Compiler(ccl)>
+hello.s (assembly program)
+<Assembler(as)>
+hello.o (relocatable object programs(binary))
+<Linker(ld)> --when you use different program/classes
+
+Compiler:
+- optimization
+- obfuscation (good when run, bad when read)
+can turn off optimizations and ask C to add extra debugging info to help us read the assembly code
+
+Compiling hello.c
+gcc -g -OØ -fno-builtin hello.c -o hello
+-g: enables debugging
+-OØ: disables optimizations(optimization level zero)
+-fno-builtin: disables any built in optimizations
+
+Disassemble hello.o with objdump
+objdump –f –s –d –-source hello
+–f: Shows header information for the entire file to help orient us
+-s: Displays useful summary information
+-d: Disassembles the code
+--source: Tells us to show the source code if it is available. 
+Because we compiled our code with debugging symbols, we have the source code.
+
