@@ -26,3 +26,36 @@ objdump –f –s –d –-source hello
 --source: Tells us to show the source code if it is available. 
 Because we compiled our code with debugging symbols, we have the source code.
 
+memory address example: 100000f61
+machine code example: 48 89 e5
+assembler code example: movq %rsp, %rbp
+
+The assembler programming model
+Program Counter(PC): address of next instruction to be executed
+Registers: 16 named locations that hold 64 bit values
+Memory: virtual memory locations
+Condition Codes: results of last comparison, overflows, logic ops
+Vector Registers: use for more complex Single Instruction Multiple Data(SIMD) operations
+
+CPU                                                  Memory (virtual memory)
+(PC / Registers / Condition Codes) <-----Data-----> (Code, Data, Stack)
+                                   ----Address---->
+                                   <--Instructions--
+ - transfer data between registers and memory:
+  Load (register from memory)
+  Store (register into memory)
+ - perform arithmetic or logic operations
+  usually on registers, sometimes on memory
+ - transfer control
+  Jump
+  Conditional branches
+  
+  
+AL(8bit) AX(16bit) EAX(32bit) RAX(64bit)
+RSP reserved for system stack pointer
+
+Moving data
+movq Source, Dest
+Dest = Source
+registers: %rax
+memory: (%rax)    //the memory cell pointed to by %rax
