@@ -56,6 +56,17 @@ RSP reserved for system stack pointer
 
 Moving data
 movq Source, Dest
-Dest = Source
+Dest = Source (put source into dest)
 registers: %rax
 memory: (%rax)    //the memory cell pointed to by %rax
+immediate: like $0x333  //a specific constant value
+
+movq %rax, %rdx:  vRDX = vRAX (copy contents of rax into rdx)
+movq (%rax), %rdx: vRDX = *pRAX (put contents of memory rax points to into rdx)
+
+%rsp: stack position
+%rdi: the first program arg in a func
+%rsi: the second
+%rdx: the third
+%rip: the Program Counter: pos of instruction next jump
+%r8 - %r15: general purpose registers
