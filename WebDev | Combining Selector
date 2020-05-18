@@ -1,0 +1,3 @@
+element with two classes: .container.title
+.container .title :title is child, container is parent, read from right to left
+a class with title that's inside container
