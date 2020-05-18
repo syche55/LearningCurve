@@ -1,0 +1,19 @@
+format:
+
+h1{
+}
+
+@media (max-width: 900px){
+  h1 {
+  }
+}
+
+
+or:
+@media (max-width: 900px) and (min-width: 800px){
+  h1 {
+  }
+}
+
+image transform back to normal position using rotate:
+rotate(0), not rotate(minus value)
