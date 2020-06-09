@@ -54,28 +54,51 @@ src是location
 css below title
 js at the end, just before the body closing tag!
 
->document.getElementsByTagName("li")
+
+DOM让用户可以select page上的component as object and manipulate
+document.querySelector("input").click();
+
+>document.getElementsByTagName("li")  //search for ALL elements that have tag name "li"
 HTMLCollection(3) [li.item, li.item, li.item]
->document.getElementsByTagName("li")[0].style.color = "red";
+>document.getElementsByTagName("li")[0].style.color = "red";  //直接改会报错，不能assign "red" to a list
+>document.getElementsByTagName("li").length;
+3
+
+>document.getElementById("title");
+<h1 id="title">Hello</h1>   //id是unique的，因此只会返回一个
+>document.getElementById("title").innerHTML="Bye";
+"Bye"
+
+querySelector也只会返回一个element
 
 document.querySelector.("h1");
-document.querySelector.("#title");
-document.querySelector.(".btn");
-document.querySelector.("li a")  <li class="item"><a href=...>Google</a></li>
-document.querySelector.("li.item")
+document.querySelector.("#title");    //id
+document.querySelector.(".btn");    //class
+document.querySelector.("li a")  <li class="item"><a href=...>Google</a></li>   //link inside the list，包裹，有阶级
+document.querySelector.("li.item")  //same level，不包裹，无阶级
 
 querySelector only selects the first one
 querySelectorAll selects all as a list
 
-document.querySelector("li").style...   Select "-"
+document.querySelector("li").style.color="red";   Select "-"
 and
 document.querySelector("li a").style    Select"-xxx"
 are not the same
+
+在querySelector里属性都要弄成string来设置
 
 document.querySelector("h1").classList.add('huge");
 styles.css
 .h1{
 ...}
 
+>>>>>改文字内容<<<<<<
 -innerHTML shows everything(including html tag) in h1, e.g.<strong></strong>, can manipulate this to add <em></em>
 -textContext only shows text
+
+
+
+document.querySelector("a").setAttribute("href", "www.google.com");
+>>>>>改图片source<<<<<<
+var image = document.querySelectorAll("img")[0];
+image.setAttribute("src", randomImageSource);
