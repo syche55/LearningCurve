@@ -1,3 +1,30 @@
+alert("test");   ->user can see
+console.log("test");  -> developer can see
+
+typeof(23)
+"number"
+
+var yourName = prompt("What is your name?");
+
+cmd + k clears console, but not the memory
+click + hold reload, clears cache
+
+
+>>>>>Strings<<<<<
+var name = "ct"
+name.length;
+name.slice(x,y) y not inclusive
+name.toUpperCase()
+
+
+
+function getMilk(){
+}
+
+
+
+
+>>>>>Operators<<<<<
 === is equal to [check data type]  == [does not check data type]
 !== not equal to
 && and
@@ -12,13 +39,20 @@ array.pop();
 for(i=0; i<2; i++){
 ...}
 
-<body onload = "alert("Hello")"> is wrong
+在该页面加载时运行
+<body onload = "alert("Hello")"> is wrong  两个双引号confusing
 <body onload = "alert('Hello')"> is correct
 
+在read html file时读到这里运行script tag里包住的code
+src是location
 <script type = "text/javascript">
   alert("Hello");
 </script>
-<script src = "index.ju" charset...></script>
+<script src = "index.js" charset...></script>
+
+顺序在html page里重要
+css below title
+js at the end, just before the body closing tag!
 
 >document.getElementsByTagName("li")
 HTMLCollection(3) [li.item, li.item, li.item]
