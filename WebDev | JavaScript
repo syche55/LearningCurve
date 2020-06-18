@@ -102,3 +102,14 @@ document.querySelector("a").setAttribute("href", "www.google.com");
 >>>>>改图片source<<<<<<
 var image = document.querySelectorAll("img")[0];
 image.setAttribute("src", randomImageSource);
+
+
+
+document.querySelector("button").addEventListener("click", handleClick);
+//document.querySelector("button").addEventListener("click", handleClick()); 这两个不一样，前一个是function as input,第二个是直接call
+function handleClick(){
+alert("i got clicked");
+}
+用匿名function:
+document.querySelector("button").addEventListener("click", function(){
+alert("i got clicked");});
