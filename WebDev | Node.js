@@ -1,11 +1,13 @@
+touch index.js (创建新index.js文件）
 node index.js (在console里打开index.js)
-node
+node （直接输一些可执行语句）
 ctrl + c / clear
 
 const a = 2;  之后不能再给a赋其他值
 
 //jshint esversion:6
 FILE SYSTEM:
+#require file systems module, encope it in our project
 const fs = require("fs"); 
 fs.copyFileSync(src, dest[,flags])
 fs.copyFileSync("file1.txt", "file2.txt");
