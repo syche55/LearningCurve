@@ -5,18 +5,23 @@ https://developers.google.com/speed/libraries/#jquery
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 paste ABOVE javascript tag <script src="index.js"></script>
 这样就可以在index.js里使用jQuery了:
+#检查是不是能用jquery了
 $(document).ready(function() {   <--如果把script的两个tag放在header里就要加上这行 如果放在body最后面就不用
+
   $("h1").css("color", "red");  <--两个元素代表第一个是改什么 第二个是改成什么
+  
   });
 一般不要 在js文件里改css
-$("h1").addClass("big-Title margin-50");  可以一次性加几个class
-可以在.big-Title里改css (removeClass hasClass)
 
+把class赋给element:
+$("h1").addClass("big-Title margin-50");  可以一次性加几个class:big-Title是一个class, margin-50是一个class
+可以在.big-Title里改css (其他功能包括：removeClass hasClass)
 
 $("h1").text("Bye");
-$("button").text("<em>Hey</em>");
+$("button").html("<em>Hey</em>");
 $("a").attr("href", "https://www.yahoo.com");
 
+#用jquery添加event listener
 $("button").click(function() {
   $("h1").css("color", "purple");
 });
@@ -26,10 +31,12 @@ $(document).keypress(function(event) {
   $("h1").text(event.key);
 });
 
+鼠标划过
 $("h1").on("mouseover", function() {
   $("h1").css("color", "purple");
 });
 
+增加element
 $("h1").before("<button>New</button>"); 加到h1前面
 $("h1").after("<button>New</button>");
 $("h1").prepend("<button>New</button>"); 加到h1里面 h1字的前面
