@@ -5,12 +5,33 @@ npm init
 npm install express
 npm install body-parser
 
+
+
 在server.js里:
 const express = require("express");
 const bodyParser = require("body-parser");
-const app = express();
+const app = express();    //express module
+
+app.listen(3000, function() {     //listen on a specifict port for any http request that gets sent to our server
+  console.log("server started on port 3000");
+  });
+在terminal里run：node server.js
+
+localhost:3000 is the homepage/root of our website
+
+在listen之前，需要一个get, get method的意思就是specify what should happen when a browser gets in touch with our server and makes a get request
+get的第一个param是location of the request, "/"就是localhost:3000, homepage, 
+第二个param是call back function, 有两个param: request, response
+app.get("/", function(request, response){
+}
+只要有人get request from the homepage, 就会触发这个function. call back function tells the server what to do when request happens
+request就是看你想干啥 发的啥请求
+response就是server要干啥回应你
+response里有一个method叫做send, response.send(), 比如 response.send("hello");
+
+bodyParser:
 app.use(bodyParser.text());  <--bodyParser has a few modes, parse all the requests into text, or bodyParser.json()
-app.use(bodyParser.urlencoded({extended: true}));  <--parse data that comes from html form, 有了这个就可以在post里用req.body
+app.use(bodyParser.urlencoded({extended: true}));  <--urlencoded: parse data that comes from html form, 有了这个就可以在post里用req.body
 app.get("/", function(req, res){
   res.send("Hello");
   })
@@ -25,18 +46,27 @@ app.post("/", function(req, res){
   res.send("The result of the calculation is" + result);
   });
   
-app.listen(3000 function() {
-  console.log(server started on port 3000");
+app.listen(3000, function() {
+  console.log("server started on port 3000");
   });
+  
+在terminal里run：node server.js
   
 npm install -g nodemon
 
 除了res.send()我们还可以用res.sendFile() 填入location of the file we want to send:
 res.sendFile(__dirname + "/index.html")
 
+
+
 bmiCalculator
 bmiCalculator.html:
-<form action="/bmicalculator" method="post"> 
+<form action="/bmicalculator" method="
+
+
+
+
+">      
   <input type="text" name="weight" placeholder="Weight">
   <input type="text" name="height" placeholder="Weight">
   <button type="submit">Calculate BMI</button>
