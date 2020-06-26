@@ -1,3 +1,19 @@
+API:
+- Endpoint
+- Paths
+- Parameters
+    ?xxx=yyy&zzz=aaa (key value pair)
+- Authentication
+
 cURL:
 terminal: man curl gives you a manual of how to use it
 curl https://www.google.com
+
+
+Native node module
+const https=require("https");
+
+app.get("/", function(req, res){
+  https.get(URL, function(response))  <==API, callback function
+  res.send
+  }
