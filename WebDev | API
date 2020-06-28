@@ -13,7 +13,39 @@ curl https://www.google.com
 Native node module
 const https=require("https");
 
+///EXAMPLE///
+Create a https server that listens on port 8080 of your computer.
+
+When port 8080 get accessed, write "Hello World!" back as a response:
+
+var https = require('https');
+
+https.createServer(function (req, res) {
+  res.on("data", function(data){
+    console.log(data);    <---如果用的是这个 会返回加密过的一串信息 解密之后就是正常的json信息
+    
+    const weatherData = JSON.parse(data);
+    console.log(weatherData);   <---这个就会log完整的有structure的json object
+    
+    const object = {
+        name:"siyu",
+        favorite:"sushi"
+    }
+    console.log(JSON.stringfy(object));     <---这个就是flat string of json
+    
+    const temperature = weatherData.main.temp   <--获取json里具体的一个信息
+  })
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write('Hello World!');
+  res.end();
+}).listen(8080);
+/////////////
+
 app.get("/", function(req, res){
   https.get(URL, function(response))  <==API, callback function
-  res.send
+  res.write("xxx");
+  res.write("bbb");      一个app.get只能有一个send method
+  res.send()        <--没有分号
   }
+  
+ 
