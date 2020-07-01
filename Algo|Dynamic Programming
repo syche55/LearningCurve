@@ -35,3 +35,36 @@
         else
             dp[i,j]=dp[i-1,j]   #exceed capacity, do not take
    return dp[n, C]
+
+
+>>>>>Complete Knapsack<<<<<
+  - n types items
+  - inf copies of each type
+  - for each item of type i, value[i], weight[i]
+  - capacity C
+  Goal: max return
+  
+1. recursion:
+    f(i) = max return given knapsack w/ capacity i
+    
+                       i
+    [                  #]  #:"last" item in the knapsack
+    
+    f(i) = max { value[1] + f(i-weight[1])
+                 value[2] + f(i-weight[2])
+                 ...
+                 value[n] + f(i-weight[n])
+               }
+    base case: f(i) = 0   i<min weight[k]
+    
+2. dp
+     0 1               C
+    [                  #]   initialized to 0
+    
+    for (i=1...C)
+      best = 0
+      for (k=1...n)
+        if(weight[k] <= i)
+          best = max(best, value[k] + dp[i-weight[k]])
+      dp[i] = best
+    return dp[C]
