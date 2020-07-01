@@ -1,0 +1,37 @@
+>>>>>0-1 Knapsack<<<<<
+  - n items
+  - each item i: value[i], weight[i]
+  - capacity of knapsack is C
+  - what is max $
+  
+1. naive enumerate all possible subsets  2^n
+  recursion:
+    f(i, j) = max $ given first i items and knapsack capacity is j
+    here the smaller problem means less items & smaller knapsack
+  
+  item:
+     1                   i
+    [                    #]
+  for the i-th item, we have two choices:
+    take i-th item:
+      f(i-1, j-weight[i]) + value[i]  if weight[i]<=j
+    not take i-th item:
+      f(i-1, j)
+      
+   we need the maximum value from the two options:
+   f(i,j)=max(f(i-1, j-weight[i]) + value[i], f(i-1, j))
+   
+2. bottom-up
+   base case: f(0, j) = f(i,0) = 0
+   
+   i=0...n  ->col
+   j=0...C  ->row
+   nC is the answer we want
+   
+   for(i=1...n):
+    for(j=1...C):
+        if (weight[i] <= j)
+            dp[i,j] = max(dp[i-1, j-weight[i]] + value[i], dp[i-1, j])
+        else
+            dp[i,j]=dp[i-1,j]   #exceed capacity, do not take
+   return dp[n, C]
