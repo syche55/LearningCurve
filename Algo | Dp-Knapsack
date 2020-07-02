@@ -98,3 +98,4 @@
     
 3. space reduce:
   if we want to know f(i, j, k), we actually only need info from i-1 th level (max(f(i-1, j-#, k-#), f(i-1, j, k))
+  so we only need two layers by using %2 for i and i-1
