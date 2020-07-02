@@ -68,3 +68,33 @@
           best = max(best, value[k] + dp[i-weight[k]])
       dp[i] = best
     return dp[C]
+    
+    
+>>>>>Knapsack w/ multiple constraints<<<<<
+- n items
+- for each item i, value[i], weight[i], vol[i]
+- knapsack weight cap W, vol cap V
+- what is the maximum return
+
+1. recursion:
+  f(i, j, k) = max value given item[1...i] and knapsack capacity is j(weight) & k(vol)
+  f(i, j, k) = max(value[i] + f(i-1, j-weight[i], k-vol[i]),  //take it
+                   f(i-1, j, k)   // not take it
+  Base case: f(0, j, k) = f(i, 0, k) = f(i, j, 0) = 0
+  Running time is exp
+  Space complexity is O(nWV)
+  
+2. dp:
+  knapsack(value[1...n], weight[1...n], vol[1...n], W, V):
+    for(i=1...n)
+      for(j=1...W)
+        for(k=1...V)
+          if (weight[i]<=j && vol[i] <=k)
+              dp[i,j,k] = max(dp[i-1,j,k],
+                              value[i]+dp[i-1, j-weight[i], k-value[i]])
+          else
+              dp[i, j, k]=dp[i-1, j, k]
+    return dp[n, W, V]
+    
+3. space reduce:
+  if we want to know f(i, j, k), we actually only need info from i-1 th level (max(f(i-1, j-#, k-#), f(i-1, j, k))
