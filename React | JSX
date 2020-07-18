@@ -1,0 +1,3 @@
+ReactDOM.render(WHAT TO ShadowRoot, WHERE TO SHOW IT);
+
+where using dom: document.getElementById("root")
