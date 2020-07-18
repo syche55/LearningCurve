@@ -1,3 +1,36 @@
+import React from "react"
+import ReactDOM from "react-dom"
+-----------------------------------------------------------------------------------------
+
 ReactDOM.render(WHAT TO ShadowRoot, WHERE TO SHOW IT);
 
-where using dom: document.getElementById("root")
+WHERE using dom: document.getElementById("root")
+      Babel: a JS compilier: compiling JSX to a plain JS
+      
+-----------------------------------------------------------------------------------------
+   
+ReactDOM.render(<h1>Hello World</h1>, document.getElementById("root"));
+      Above code is same as:
+var h1 = document.createElement("h1");
+h1.innerHTML = "Hello World";
+document.getElementById("root").append(h1);
+
+-----------------------------------------------------------------------------------------
+'render' only takes on single element.
+So if I want to add another <p> element, I can use a <div> to wrap a <h1> and a <p>.
+
+ReactDOM.render(
+<div>
+  <h1>Hello World</h1>
+  <p>This is a paragragh. </p>
+</div>, document.getElementById("root"));
+-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
