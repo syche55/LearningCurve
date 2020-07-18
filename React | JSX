@@ -26,11 +26,67 @@ ReactDOM.render(
 </div>, document.getElementById("root"));
 -----------------------------------------------------------------------------------------
 
+var React = require("react");
+var ReactDOM = require("react-dom");
 
+const fname = "Siyu";
+const lname = "Chen";
+const currentDate = new Date();
+const year = currentDate.getFullYear();
 
+ReactDOM.render(
+  <div>
+    <h1>{fname + " " + lname}'s Favorite Japanese Food at {year}</h1>
+    <ul>
+      <li>Tempura</li>
+      <li>Sushi</li>
+      <li>Ramen</li>
+    </ul>
+  </div>,
+  document.getElementById("root")
+);
 
+-----------------------------------------------------------------------------------------
+if we do some style in styles.css:
+.heading {
+      color: red;
+}
+Then in index.js:
+ReactDOM.render(
+  <div>
+    <h1 className="heading">My H1</h1>
+  </div>,
+  document.getElementById("root")
+);
 
+Need to change script in index.html:
+    <script src="../src/index.js" type="text/Javascript"></script>
+to:
+    <script src="../src/index.js" type="text/JSX"></script>
 
+-----------------------------------------------------------------------------------------
+HTML Global attributes
+<h1 className="heading" contentEditable="true" spellCheck="false">My H1</h1>   ----> can edit the h1 content, not check spelling, use camelCase!
 
+-----------------------------------------------------------------------------------------
+In-line styling:
+    <h1 style={{ color: "red" }}>My H1</h1>     // { color: "red" } is a javascript object
 
+const customStyle = {
+      color: "red",
+      fonSize: "20px",
+      border: "1px solid black"
+}
+ <h1 style={customStyle}>My H1</h1> 
+
+cons customStyle = {
+      color: ""
+}
+if (currentTime < 12) {
+      greeting = "Good Morning",
+      customStyle.color = "red";
+} else if (currentTime < 18) {
+      greeting = "Good Afternoon"
+      customStyle.color = "gree";
+}
 
