@@ -1,0 +1,12 @@
+const app = express()
+app.use("view engine", "ejs");
+**declare before use
+
+markup
+<%= EJS %>
+
+var day = "Weekend";
+res.render("list", {kindOfDay: day});
+
+in list.ejs file:
+<h1>It's a <%= kindOfDay %>!<</h1>
