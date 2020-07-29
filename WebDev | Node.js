@@ -25,3 +25,8 @@ npm install superheroes (module)
 在index.js里:
 var superheroes = require("superheroes");
 var mySuperheroName = superheroes.random();
+
+
+如果一个文件里的一些code 比如在app.js里的code不应该放在app.js里，可以单独放在一个file里，作为module require进app.js
+在新file里，可以export
+module.exports...
