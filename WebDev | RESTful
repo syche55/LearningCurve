@@ -1,0 +1,14 @@
+REST: REpresentational State Transfer
+An architectural style for designing APIs
+
+
+GET / POST / PUT / PATCH / DELETE
+
+GET == READ
+POST == CREATE
+PUT / PATCH == UPDATE
+PUT: OVERWRITE
+PATCH: UPDATE PIECE
+
+
+Robo 3T serves as a visuable mongodb instead of using terminal
