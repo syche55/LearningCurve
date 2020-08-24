@@ -12,4 +12,12 @@ manage.py: runs commands
 /migration.py: migrate database
 
 init: python3 -m django startproject SPTM
+cd SPTM
 use: python3 manage.py runserver
+
+
+MVC Architecture:
+URL Patterns        Views         Templates
+                      |
+                      |
+                    Models
