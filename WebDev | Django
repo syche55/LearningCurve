@@ -3,5 +3,13 @@ manage.py: runs commands
 /settings.py: configures the django project
 /urls.py: routes web requests based on URL
 
+/apps.py: settings specific for this app
+/models.py: schema, data model
+/url.py: url routing
+/views.py: defines logic and control flow of request, http response
+/admin.py: admin interface for the app
+/test.py: unit test
+/migration.py: migrate database
+
 init: python3 -m django startproject SPTM
 use: python3 manage.py runserver
