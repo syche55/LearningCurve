@@ -9,7 +9,7 @@ manage.py: runs commands
 /views.py: defines logic and control flow of request, http response
 /admin.py: admin interface for the app
 /test.py: unit test
-/migration.py: migrate database
+/migration.py: migrate(change, add a model, add a field, remove a field)database
 
 init: python3 -m django startproject SPTM
 cd SPTM
@@ -21,3 +21,22 @@ URL Patterns        Views         Templates
                       |
                       |
                     Models
+
+
+-----------------------------------------------------------------------
+
+Models:
+name = models.charField(max_length = 10)
+submission_date = models.DateTimeField()
+sex = models.charField(choices = SEX_CHOICES, blank = True)
+age = models.IntegerField(null=True)
+vaccinations= models.ManyToManyField('Vaccine', blank = True)
+
+-----------------------------------------------------------------------
+
+Migration:
+$ python3 manage.py makemigrations
+$ python3 manage.py showmigrations
+$ python3 manage.py migrate (this runs all migrations in the project to the current state)
+can also run only mirgrations in specific app with specific number using:
+$ python3 manage.py migrate <appname> <number>
