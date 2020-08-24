@@ -1,0 +1,7 @@
+manage.py: runs commands
+/__init__py: tells python that the folder contains python code
+/settings.py: configures the django project
+/urls.py: routes web requests based on URL
+
+init: python3 -m django startproject SPTM
+use: python3 manage.py runserver
