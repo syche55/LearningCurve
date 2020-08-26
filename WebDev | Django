@@ -40,3 +40,18 @@ $ python3 manage.py showmigrations
 $ python3 manage.py migrate (this runs all migrations in the project to the current state)
 can also run only mirgrations in specific app with specific number using:
 $ python3 manage.py migrate <appname> <number>
+
+-----------------------------------------------------------------------
+
+URL Conf Patterns: path converter(a pattern string), view to use, name(optional, used to create links)
+urlpatterns=[
+  path('', views.home, name = 'home'),
+  path('adoptions/<int:pet_id>/', views.pet_detail,               <> capture group, for variables; int: path converter, we are expecting an int; pet_id: keyword arguement
+name='pet_detail'),
+]
+
+Django checks each pattern in order, if the pattern matches, that view is called
+Otherwise, continues to the next pattern
+If there is no match-HTTP 404
+
+empty (https://wisdompets.com) ---> home() ---> home.html
