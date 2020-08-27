@@ -55,3 +55,52 @@ Otherwise, continues to the next pattern
 If there is no match-HTTP 404
 
 empty (https://wisdompets.com) ---> home() ---> home.html
+
+-----------------------------------------------------------------------
+
+Template Syntax
+{{ variable }}
+{% tag %}
+{{ variable|filter }}
+
+<h3>{{ pet.name|capfirst }}</h3>
+
+resulting:
+<h3>Scooter</h3>
+
+{% for pet in pets %}
+  <li>{{ pet.name }}</li>
+{% endfor %}
+
+{% url 'home' %}        where the previous section name attribute becomes userful
+
+full example:
+<ul>
+  {% for pet in pets %}
+    <li>
+      <a href="{% url 'pet_detail' pet.id %}">
+        {{ pet.name|capfirst }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+-----------------------------------------------------------------------
+
+Inheritance: base.html
+
+in home.html:
+{% extends "base.html" %}
+
+<body>
+  {% block content %}
+    <h3>Animals available for adoption</h3>
+  
+  {% endblock content %}
+</body>
+
+more examples:
+{% if pet.breed %}                  # previously, pet.breed info is optional
+  <p>Breed: {{ pet.breed }}</p>
+{% endif %}
+<p class="hidden">{{ pet.description }}</p>       # later when add js effect, when hover, the description can be shown
